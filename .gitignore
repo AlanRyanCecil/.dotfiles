@@ -1,0 +1,10 @@
+#      *********    .gitignore file for the .dotfiles    *********
+
+# ignore all files and directories
+*
+*/
+
+# don't ignore these
+!.gitignore
+!.vimrc
+!.zshrc
