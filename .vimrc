@@ -49,7 +49,7 @@ filetype plugin indent on    " required
 
 let mapleader=","
 
-set termguicolors
+""set termguicolors
 set background=dark
 ""colorscheme jellybeans
 ""colorscheme monokai
