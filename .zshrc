@@ -7,6 +7,8 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 
 ZSH_THEME="fletcherm"
+# theme for the server
+ZSH_THEME="dst"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
