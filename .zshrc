@@ -60,6 +60,7 @@ PATH=$HOME/bin:/usr/local/bin:$PATH
 #PATH=${PATH}:"/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/git/bin"
 #PATH=${PATH}:"/Users/alancecil/local/node/bin"
 #PATH=${PATH}:"/Library/Frameworks/Python.framework/Versions/3.4/bin"
+PATH=${PATH}:"/usr/local/mysql/bin"
 PATH=${PATH}:"/usr/local/Cellar/mongodb/3.2.3/bin"
 PATH=${PATH}:"/Users/alancecil/scripts/ngspin"
 PATH=${PATH}:"/Users/alancecil/pyPackages/basic"
@@ -95,13 +96,16 @@ alias shit="ssh alanryancecil@aluminum"
 
 alias chrome="open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias slack="open -a /Applications/Slack.app/Contents/MacOS/Slack"
+
+alias my="mysql --login-path=local"
+alias mybench="open -a /Applications/MySQLWorkbench.app/Contents/MacOS/MySQLWorkbench"
 alias mdb="mongod --config /usr/local/etc/mongod.conf"
 
 alias tks="tmux kill-session"
 
 # shortcuts
 alias ucsdcd="cd ~/UCSD_data_science_and_visualization"
-
+alias slide='jupyter nbconvert /Users/alancecil/UCSD_data_science_and_visualization/group_projects/311-San-Diego/notebooks/311_slideshow.ipynb --to slides --post serve'
 # functions
 
 mkdircd(){

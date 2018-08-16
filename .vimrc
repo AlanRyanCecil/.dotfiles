@@ -131,8 +131,8 @@ imap <F1> <Esc>
 imap <C-l> <C-x><C-l>
 
 "silly shift key
-nnoremap ; :
-vnoremap ; :
+""nnoremap ; :
+""vnoremap ; :
 
 "%% in command mode to print file path
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
@@ -166,9 +166,10 @@ nmap <silent> <leader>w= :wincmd =<CR>
 nmap <silent> <leader>sh :split<CR>
 nmap <silent> <leader>sv :vsplit<CR>
 
-"cycle through buffffer
+"buffffer stuff
 nmap <silent> <leader>b :bn<CR>
 nmap <silent> <leader>B :bN<CR>
+nmap <silent> <leader>db :bd<CR>
 
 "sometimes one hand jumps the gun
 nmap <silent> <leader>hs :split<CR>
