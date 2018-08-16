@@ -51,9 +51,9 @@ let mapleader=","
 
 ""set termguicolors
 set background=dark
-""colorscheme jellybeans
+colorscheme jellybeans
 ""colorscheme monokai
-colorscheme spacegray
+""colorscheme spacegray
 
 set backup
 set backupdir=~/.vim/backup
