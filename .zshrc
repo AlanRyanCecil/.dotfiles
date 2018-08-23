@@ -9,7 +9,7 @@ export ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="fletcherm"
 ZSH_THEME="fletcherm_alan"
 # theme for the server
-#ZSH_THEME="dst"
+ZSH_THEME="dst"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
