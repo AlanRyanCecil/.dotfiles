@@ -6,7 +6,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 
-ZSH_THEME="fletcherm"
+#ZSH_THEME="fletcherm"
+ZSH_THEME="fletcherm_alan"
 # theme for the server
 #ZSH_THEME="dst"
 
@@ -52,7 +53,7 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git osx python pip pep8 vi-mode mysql-macports)
 
 # User configuration
 
@@ -72,6 +73,7 @@ export PYTHONPATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 
+
 # ********  Aliases  ***************
 
 # teminal
@@ -82,6 +84,12 @@ alias copypath="pwd|pbcopy"
 
 # git
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias ga='git add'
+alias gc='git commit'
+alias gpl='git pull'
+alias gps='git push'
+alias gs='git status'
+alias gd='git diff'
 alias glog='git log --graph --all --decorate --oneline'
 
 alias sublime='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
@@ -98,7 +106,8 @@ alias chrome="open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Ch
 alias slack="open -a /Applications/Slack.app/Contents/MacOS/Slack"
 
 alias my="mysql --login-path=local"
-alias mybench="open -a /Applications/MySQLWorkbench.app/Contents/MacOS/MySQLWorkbench"
+alias wb="open -a /Applications/MySQLWorkbench.app/Contents/MacOS/MySQLWorkbench"
+alias sqp="open -a /Applications/Sequel\ Pro.app/Contents/MacOS/Sequel\ Pro"
 alias mdb="mongod --config /usr/local/etc/mongod.conf"
 
 alias tks="tmux kill-session"
@@ -139,6 +148,8 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
