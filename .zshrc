@@ -1,5 +1,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export JAVA_HOME=$(/usr/libexec/java_home)
+#export SPARK_HOME="$HOME/pyspark"
+#export PYSPARK_SUBMIT_ARGS="--master local[2] pyspark-shell"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -9,7 +12,7 @@ export ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="fletcherm"
 ZSH_THEME="fletcherm_alan"
 # theme for the server
-ZSH_THEME="dst"
+#ZSH_THEME="dst"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -53,7 +56,15 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx python pip pep8 vi-mode mysql-macports)
+plugins=(
+git
+osx
+python
+pip
+pep8
+vi-mode
+mysql-macports
+)
 
 # User configuration
 
@@ -62,10 +73,10 @@ PATH=$HOME/bin:/usr/local/bin:$PATH
 #PATH=${PATH}:"/Users/alancecil/local/node/bin"
 #PATH=${PATH}:"/Library/Frameworks/Python.framework/Versions/3.4/bin"
 PATH=${PATH}:"/usr/local/mysql/bin"
-PATH=${PATH}:"/usr/local/Cellar/mongodb/3.2.3/bin"
-PATH=${PATH}:"/Users/alancecil/scripts/ngspin"
-PATH=${PATH}:"/Users/alancecil/pyPackages/basic"
 PATH=${PATH}:"/Users/alancecil/anaconda3/bin"
+PATH=${PATH}:"/usr/local/Cellar/mongodb/3.2.3/bin"
+PATH=${PATH}:"/Users/alancecil/scripts"
+PATH=${PATH}:"/Users/alancecil/pyPackages/basic"
 export PATH
 
 PYTHONPATH="/Users/alancecil/pyPackages"
@@ -73,17 +84,21 @@ export PYTHONPATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 
-
 # ********  Aliases  ***************
 
 # teminal
 alias c="clear"
 alias lk="ls -1a"
+alias cl="c && lk"
 alias mkdirp="mkdir -p"
+alias copy="pbcopy"
 alias copypath="pwd|pbcopy"
+alias sed="gsed"
+
+# scripts
 
 # git
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotgit='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ga='git add'
 alias gc='git commit'
 alias gpl='git pull'
@@ -113,8 +128,13 @@ alias mdb="mongod --config /usr/local/etc/mongod.conf"
 alias tks="tmux kill-session"
 
 # shortcuts
-alias ucsdcd="cd ~/UCSD_data_science_and_visualization"
+alias ucsdcd="cd ~/TAUCSD/UCSDSAN201904DATA2"
+alias pd="source activate PythonData"
 alias slide='jupyter nbconvert /Users/alancecil/UCSD_data_science_and_visualization/group_projects/311-San-Diego/notebooks/311_slideshow.ipynb --to slides --post serve'
+
+# python environments
+alias psych="conda activate psych && export FLASK_APP=psychTest && export FLASK_DEBUG=1"
+alias flaskblog="conda activate flaskblog && export FLASK_APP=flaskblog && export FLASK_DEBUG=1"
 # functions
 
 mkdircd(){
@@ -123,11 +143,11 @@ mkdircd(){
 }
 
 ucsd(){
-    ucsdcd
+    cd "/Users/alancecil/TAUCSD/UCSDSAN201904DATA2"
     chrome
     slack
-    sublime .
-    open .
+    open "/Users/alancecil/TAUCSD/DataViz-Lesson-Plans/01-Lesson-Plans"
+    open "/Users/alancecil/TAUCSD/UCSDSAN201904DATA2/01-Lesson-Plans"
     source activate PythonData
 }
 
@@ -135,6 +155,12 @@ ucsd(){
  if [ -f /Users/alancecil/zsh_functions/protmux ]; then
     source /Users/alancecil/zsh_functions/protmux
  fi
+
+# suggested by gem install lunchy
+# LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+# if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
+# . $LUNCHY_DIR/lunchy-completion.zsh
+# fi
 
 
 source $ZSH/oh-my-zsh.sh
@@ -167,5 +193,9 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # pip3 should only run if there is a virtualenv currently activated
- export PIP3_REQUIRE_VIRTUALENV=true
+export PIP3_REQUIRE_VIRTUALENV=true
 
+
+
+source activate PythonData
+bindkey -v

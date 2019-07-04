@@ -18,7 +18,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'godlygeek/tabular'
-Plugin 'Rykka/colorv.vim'
+"Plugin 'Rykka/colorv.vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'dhruvasagar/vim-prosession'
 
@@ -31,6 +31,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kaicataldo/material.vim'
 Plugin 'aradunovic/perun.vim'
 Plugin 'ajh17/spacegray.vim'
+
+" python autocomplete
+Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,15 +48,16 @@ filetype plugin indent on    " required
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
+autocmd FileType python setlocal completeopt-=preview
 " Put your non-Plugin stuff after this line
 
 let mapleader=","
 
 ""set termguicolors
 set background=dark
-colorscheme jellybeans
+""colorscheme jellybeans
 ""colorscheme monokai
-""colorscheme spacegray
+colorscheme spacegray
 
 set backup
 set backupdir=~/.vim/backup
@@ -206,7 +210,11 @@ let NERDTreeChDirMode=2 " Change the NERDTree directory to the root node
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 "indent guides
-let g:indent_guides_enable_on_vim_startup=1
+"let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_guide_size=1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=6
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
 
 "tabularize
